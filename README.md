@@ -10,6 +10,8 @@
 
 *Compress, Encrypt, Fileless Execute — One ELF binary, zero disk traces.*
 
+### 📺 [Watch demo on YouTube](https://www.youtube.com/watch?v=-1-ggWZW1qY)
+
 </div>
 
 ---
