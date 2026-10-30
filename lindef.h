@@ -245,8 +245,7 @@ typedef __SIZE_TYPE__        SIZE_T;
 #define NULL           ((VOID*)0)
 #define INVALID_HANDLE ((LONG)-1)
 
-#define EINTR     4
-#define MAX_ERRNO 4095
+#define EINTR 4
 
 #define XMM_REGISTER_SIZE 16
 
@@ -371,9 +370,9 @@ struct linux_dirent64 {
 #define _LIKELY(x)     _GCC_FUNC(expect)(!!(x), 1) // Hot path
 
 
-/* Check for Linux syscall failure */
+/* Check for Linux syscall (failure) */
 #define SYS_FAIL(status) \
-    _UNLIKELY((ULONG)(status) >= (ULONG)(-MAX_ERRNO))
+    _UNLIKELY((LONG)(status) < 0L)
 
 
 /* Optimized branch control macros */
