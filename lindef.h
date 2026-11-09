@@ -28,19 +28,27 @@
 
 
 #if !defined(__GNUC__) || defined(__clang__)
-    #error "lindef.h: GCC compiler is required."
+    #error "elflhr: GCC compiler is required."
+#endif
+
+#if defined(__STRICT_ANSI__)
+    #error "elflhr: GNU extensions required."
+#endif
+
+#if !defined(__STDC_VERSION__) || (__STDC_VERSION__ < 201112L)
+    #error "elflhr: C11 standard or higher is required."
 #endif
 
 #if !defined(__linux__)
-    #error "lindef.h: Linux OS is required."
+    #error "elflhr: Linux OS is required."
 #endif
 
 #if !defined(__x86_64__)
-    #error "lindef.h: x86_64 architecture is required."
+    #error "elflhr: x86_64 architecture is required."
 #endif
 
 #if !defined(__LP64__)
-    #error "lindef.h: LP64 ABI is required."
+    #error "elflhr: LP64 ABI is required."
 #endif
 
 
